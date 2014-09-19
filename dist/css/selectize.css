@@ -282,6 +282,11 @@
   -moz-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
 }
+.selectize-control.dropdown-position-top .selectize-input.dropdown-active {
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+}
 .selectize-dropdown-content {
   overflow-y: auto;
   overflow-x: hidden;

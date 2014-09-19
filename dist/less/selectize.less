@@ -254,7 +254,11 @@
 		border-top:  @selectize-border;
 		border-bottom: 0 none;
 		.selectize-border-radius(@selectize-border-radius @selectize-border-radius 0 0);
-
+	}
+	.selectize-input{
+		&.dropdown-active {
+			.selectize-border-radius(0 0 @selectize-border-radius @selectize-border-radius);
+		}
 	}
 }
 .selectize-dropdown-content {
