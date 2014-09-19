@@ -1597,11 +1597,14 @@ $.extend(Selectize.prototype, {
 		var position = this.settings.position === 'bottom' ? 'top':'bottom';
 		offset.top += $control.outerHeight(true);
 
-		this.$dropdown.css({
+		var css = {
 			width : $control.outerWidth(),
-			position : offset.top,
 			left  : offset.left
-		});
+		};
+
+		css[position] = offset.top;
+
+		this.$dropdown.css(css);
 	},
 
 	/**
