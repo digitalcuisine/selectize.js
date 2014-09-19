@@ -115,12 +115,14 @@ $.extend(Selectize.prototype, {
 		var tab_index;
 		var classes;
 		var classes_plugins;
+		var positionning_class;
 
 		inputMode         = self.settings.mode;
 		tab_index         = $input.attr('tabindex') || '';
 		classes           = $input.attr('class') || '';
+		positionning_class= 'dropdown-position-' + settings.position;
 
-		$wrapper          = $('<div>').addClass(settings.wrapperClass).addClass(classes).addClass(inputMode);
+		$wrapper          = $('<div>').addClass(settings.wrapperClass).addClass(positionning_class).addClass(classes).addClass(inputMode);
 		$control          = $('<div>').addClass(settings.inputClass).addClass('items').appendTo($wrapper);
 		$control_input    = $('<input type="text" autocomplete="off" />').appendTo($control).attr('tabindex', tab_index);
 		$dropdown_parent  = $(settings.dropdownParent || $wrapper);
@@ -1594,7 +1596,7 @@ $.extend(Selectize.prototype, {
 	positionDropdown: function() {
 		var $control = this.$control;
 		var offset = this.settings.dropdownParent === 'body' ? $control.offset() : $control.position();
-		var position = this.settings.position === 'bottom' ? 'top':'bottom';
+		var position = this.settings.position != 'top' ? 'top':'bottom';
 		offset.top += $control.outerHeight(true);
 
 		var css = {
